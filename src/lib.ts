@@ -1,21 +1,21 @@
 import type * as types from './types'
 
-function error(xhr: XMLHttpRequest, reason?: unknown) {
+function error(xhr: XMLHttpRequest, reason?: unknown): types.ErrorResponse {
+  let name = 'Error'
+  let message = xhr.statusText
+  let stack: string | undefined
+
+  if (reason instanceof Error) {
+    const err = reason as Error
+    name = err.name
+    message = err.message
+    stack = err.stack
+  }
+
   return {
-    get name() {
-      if (reason) return (reason as Error).name
-      return 'Error'
-    },
-
-    get message() {
-      if (reason) return (reason as Error).message
-      return xhr.statusText
-    },
-
-    get stack() {
-      if (reason) return (reason as Error).stack
-    },
-
+    name,
+    message,
+    stack,
     xhr,
   }
 }
