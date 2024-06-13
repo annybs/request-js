@@ -1,0 +1,33 @@
+{
+  "name": "@annybs/request-js",
+  "version": "1.0.0",
+  "description": "A tiny, dependency-free library for performing simple XMLHttpRequests",
+  "main": "dist/src/index.js",
+  "files": [
+    "dist/src/",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "npx eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "http",
+    "https",
+    "request",
+    "typescript",
+    "xmlhttprequest"
+  ],
+  "author": "Aneurin Barker Snook <a@aneur.in>",
+  "license": "MIT",
+  "homepage": "https://github.com/annybs/request-js",
+  "repository": "https://github.com/annybs/request-js.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@annybs/eslint": "^1.0.0"
+  }
+}
