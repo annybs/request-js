@@ -200,7 +200,7 @@ function response(xhr: XMLHttpRequest) {
 
     get json() {
       if (xhr.responseType === 'json') return xhr.response
-      if (xhr.responseType === 'text') return JSON.parse(xhr.responseText)
+      if (xhr.responseType === 'text' || !xhr.responseType) return JSON.parse(xhr.responseText)
       throw new Error('responseType is not json or text')
     },
 
